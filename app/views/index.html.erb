@@ -1,0 +1,28 @@
+<h1>To Does List</h1>
+ <ul>
+ 	  <% @todos.each do |todo| %>
+
+    <div>
+      Description: <%= plane[:description] %>
+    </div>
+
+  <% end %>
+ </ul>
+
+  <form action="/todos" method="post">
+    <input type="text" name="todos[description]">
+    <textarea name="plane[description]"></textarea>
+
+    <button> To do the do </button>
+  </form>
+
+  <%= form_for :todos do |f| %>
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
